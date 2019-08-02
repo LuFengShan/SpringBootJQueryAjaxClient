@@ -10,4 +10,9 @@ public class WebController {
     public String homepage(){
         return "index";
     }
+
+    @GetMapping(value="/h2")
+    public String homepage2(){
+        return "index2";
+    }
 }

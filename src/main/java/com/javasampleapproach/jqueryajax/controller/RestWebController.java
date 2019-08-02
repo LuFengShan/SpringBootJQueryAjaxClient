@@ -11,7 +11,13 @@ import java.util.List;
 @RequestMapping("/api/customer")
 public class RestWebController {
 
-	List<Customer> cust = new ArrayList<>();
+	public static List<Customer> cust = new ArrayList<>();
+
+	static {
+		cust.add(new Customer("gx", "s"));
+		cust.add(new Customer("hd", "w"));
+		cust.add(new Customer("py", "w"));
+	}
 
 	@GetMapping(value = "/all")
 	public Response getResource() {
