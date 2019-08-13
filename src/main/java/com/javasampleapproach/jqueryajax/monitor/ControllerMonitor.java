@@ -6,6 +6,7 @@ import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
 import java.util.stream.Stream;
 
 /**
@@ -20,8 +21,13 @@ import java.util.stream.Stream;
 public class ControllerMonitor {
 	@AfterReturning("execution(* com..*Controller.*(..))")
 	public void logServiceAccess(JoinPoint joinPoint) {
-		Stream.of(joinPoint.getArgs())
-				.forEach(p -> log.info(p.toString()));
-		log.info("Completed: " + joinPoint);
+		Object[] args = joinPoint.getArgs();
+		if (args.length > 1) {
+			Stream.of(joinPoint.getArgs())
+					.forEach(p -> log.info(p.toString()));
+			log.info("Completed: " + joinPoint);
+		} else {
+			log.info("没有参数");
+		}
 	}
 }

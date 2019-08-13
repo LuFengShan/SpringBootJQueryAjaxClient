@@ -1,0 +1,43 @@
+= 重庆大屏接口说明文档
+:author: sgx
+:email: sgx@aa.com
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-http-request-title: 请求示例
+:operation-http-response-title: 响应示例
+:operation-request-fields-title: 请求字段说明
+
+[[overview]]
+= Overview
+
+[[resources]]
+= Resources
+
+[[resources-customers]]
+== /api/customer
+
+[[resources-customers-list]]
+=== 消费者列表
+
+operation::rest-web-controller-all[snippets='http-request,http-response']
+
+[[resources-customers-create]]
+=== 保存一个消费者
+
+operation::rest-web-controller-save[snippets='request-fields,http-request,http-response']
+
+== /p2
+
+[[resources-customers-list]]
+=== 消费者列表2
+
+operation::rest-web-controller-all-2[snippets='http-request,http-response']
+
+[[resources-customers-create]]
+=== 保存一个消费者2
+
+operation::rest-web-controller-save-2[snippets='request-fields,http-request,http-response']

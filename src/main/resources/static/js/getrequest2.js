@@ -10,7 +10,7 @@ $( document ).ready(function() {
 	function ajaxGet(){
 		$.ajax({
 			type : "GET",
-			url : "/all2",
+			url : "/p2/all2",
 			success: function(result){
 				if(result.code == 1){
 					$('#getResultDiv ul').empty();
